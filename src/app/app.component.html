@@ -1,24 +1,33 @@
 <div class="content">
-
-  <div class="lcontent">
+  <div class="top-content">
     <div class="logo">
       <span>Payn Financial</span>
-
     </div>
       <nav>
-          <ul>
-            <li><a routerLink="/reports" routerLinkActive="active"></a>Relatórios</li>
-            <li><a routerLink="/entries" routerLinkActive="active"></a>Gastos</li>
-          </ul>
-          <ul>
-            <li><a routerLink="/cat" routerLinkActive="active">Categorias</a></li>
-            <li><a routerLink="/cat/111/edit"routerLinkActive="active">Adicionar Categoria</a></li>
-          </ul>
+              <button
+              [matMenuTriggerFor]="menu"
+              type="button"
+              aria-label="Toggle sidenav"
+              mat-icon-button
+              *ngIf="true">
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+            </button>
+              <mat-menu #menu="matMenu">
+                  <button mat-menu-item routerLink="/reports" routerLinkActive="active">Relatórios</button>
+                  <button mat-menu-item routerLink="/entries" routerLinkActive="active">Gastos</button>
+                <button mat-menu-item routerLink='cat'[matMenuTriggerFor]="menuCategorias">Categorias</button>
+              </mat-menu>
+              <mat-menu #menuCategorias="matMenu">
+                  <button mat-menu-item routerLink='cat'>Lista</button>
+                  <button mat-menu-item routerLink='cat/new'>Adicionar</button>
+                </mat-menu>
         </nav>
   </div>
 
-  <div class="rcontent">
+  <div class="wrap-content">
+    <div class="breath">
       <router-outlet></router-outlet>
+    </div>
   </div>
 
 
