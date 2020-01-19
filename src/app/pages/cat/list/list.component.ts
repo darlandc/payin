@@ -13,8 +13,8 @@ const editar = 'Editar';
 const excluir = 'Excluir';
 
 const ELEMENT_DATA: TiposCategorias[] = [
-  { nome: 'Alimentação', registros: 120, gastosTotais: 34593, porcentagem: '20%', actions: [editar + excluir] } ,
-  { nome: 'Bebidas', registros: 209, gastosTotais: 40026, porcentagem: '30%', actions: [editar + excluir] }
+  { nome: 'Alimentação', registros: 120, gastosTotais: 34593, porcentagem: '20%', actions: [editar,  excluir] } ,
+  { nome: 'Bebidas', registros: 209, gastosTotais: 40026, porcentagem: '30%', actions: [editar,  excluir] }
 ];
 
 @Component({
@@ -24,11 +24,12 @@ const ELEMENT_DATA: TiposCategorias[] = [
 })
 export class ListComponent implements OnInit {
   actions: any;
-  editar = ELEMENT_DATA
+  editar: string;
+  excluir: string;
 
 
   constructor() {
-    console.log(ELEMENT_DATA);
+
   }
 
   panelOpenState = false;
@@ -42,7 +43,11 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.dataSource.filteredData[0]);
+    this.editar = editar;
+    this.excluir = excluir;
 
+    console.log(editar);
 
   }
 
