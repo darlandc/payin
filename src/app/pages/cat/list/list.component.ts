@@ -6,11 +6,12 @@ export interface TiposCategorias {
   registros: number;
   gastosTotais: number;
   porcentagem: string;
+  actions: any;
 }
 
 const ELEMENT_DATA: TiposCategorias[] = [
-  { nome: 'Alimentação', registros: 120, gastosTotais: 34593, porcentagem: '20%'},
-  { nome: 'Bebidas', registros: 209, gastosTotais: 40026, porcentagem: '30%'}
+  { nome: 'Alimentação', registros: 120, gastosTotais: 34593, porcentagem: '20%', actions: "['editar', 'deletar']" },
+  { nome: 'Bebidas', registros: 209, gastosTotais: 40026, porcentagem: '30%', actions: "['editar', 'deletar']" }
 ];
 
 
@@ -26,7 +27,7 @@ export class ListComponent implements OnInit {
 
   panelOpenState = false;
 
-  displayedColumns: string[] = ['nome', 'registros', 'gastosTotais', 'porcentagem'];
+  displayedColumns: string[] = ['nome', 'registros', 'gastosTotais', 'porcentagem', 'actions'];
 
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
