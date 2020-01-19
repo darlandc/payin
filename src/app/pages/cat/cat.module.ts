@@ -1,4 +1,4 @@
-import { MaterialModule } from './../../angular.material.module';
+import { AngularMaterialModule } from './../../material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -10,12 +10,13 @@ import { DetailComponent } from './detail/detail.component';
 @NgModule({
   declarations: [ListComponent, FormComponent, DetailComponent],
   exports: [
-    MaterialModule
+    AngularMaterialModule
+
   ],
   imports: [
     CommonModule,
     CatRoutingModule,
-    MaterialModule
+    AngularMaterialModule
   ]
 })
 export class CatModule { }
