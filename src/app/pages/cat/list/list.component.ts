@@ -43,11 +43,6 @@ export class ListComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.dataSource.filteredData[0]);
-    this.editar = editar;
-    this.excluir = excluir;
-
-    console.log(editar);
 
   }
 
